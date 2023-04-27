@@ -7,7 +7,7 @@
     <div class="form-group">
       <label for="start"><i class="fas fa-map-marker-alt"></i> Start:</label>
       <div class="input-group">
-        <p-autoComplete [(ngModel)]="start" [ngModelOptions]="{standalone: true}" [suggestions]="results" (completeMethod)="search($event)" [dropdown]="true"></p-autoComplete>        
+        <p-autoComplete [(ngModel)]="start" [ngModelOptions]="{standalone: true}" [suggestions]="results" (completeMethod)="search($event)" [dropdown]="true"></p-autoComplete>
       </div>
     </div>
 
@@ -42,7 +42,8 @@
     </div>
 
     <div class="form-group text-center">
-      <button type="submit" class="btn btn-primary" routerLink="/routetest">Add Route</button>
+      <!-- <button type="submit" class="btn btn-primary" routerLink="/routetest">Add Route</button> -->
+      <button type="submit" class="btn btn-primary" (click)="addRoute()">Add Route</button>
     </div>
 
     <!-- <div class="form-group">
