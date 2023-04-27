@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NodeService } from '../nodeservice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-plan-route',
@@ -14,7 +15,7 @@ export class PlanRouteComponent implements OnInit{
   stops: string[] = [];
 
 
-  constructor(private nodeService: NodeService){
+  constructor(private nodeService: NodeService, private router: Router){
   }
 
   ngOnInit(): void {
@@ -43,5 +44,11 @@ export class PlanRouteComponent implements OnInit{
 
   removeStop(index: number): void {
     this.stops.splice(index, 1);
+  }
+
+  addRoute(){
+    let allStops = [];
+    allStops = [this.start, ...this.stops, this.end];
+    this.router.navigate(['/routetest'], { state: {stops : allStops}})
   }
 }
