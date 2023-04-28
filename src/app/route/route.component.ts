@@ -74,7 +74,9 @@ export class RouteComponent {
     this.resetMessage();
     const userId = localStorage.getItem("userId");
     if(!userId){
-      console.log("You have to login to save route");
+      this.saveMessage = "You have to login to save route"
+      this.showMessage = true;
+      this.resetMessage();
       return;
     }
 
