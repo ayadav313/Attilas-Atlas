@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'directory', component: DirectoryComponent },
   { path: 'plan', component: PlanRouteComponent },
-  { path: 'routetest', component: RouteComponent},
+  { path: 'show-route', component: RouteComponent},
   { path: '**', redirectTo: '/home' } // catch-all route for undefined paths
 ];
 

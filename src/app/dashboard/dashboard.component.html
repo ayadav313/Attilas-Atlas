@@ -1,1 +1,12 @@
-<p>dashboard works!</p>
+<div class="container">
+  <h1>Your Saved Routes</h1>
+
+  <p *ngFor="let savedRoute of savedRoutes$ | async">
+    <!-- {{ savedRoute.routeName }} -->
+    <button (click)="showRoute(savedRoute)" class="btn btn-primary">{{ savedRoute.routeName }}</button>
+    <!-- <button (click)="removeRoute()" class="btn btn-primary">Remove</button> -->
+  </p>
+
+  <!-- <p-tree [value]="routesTree" [filter]="true"></p-tree> -->
+</div>
+

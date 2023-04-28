@@ -1,5 +1,16 @@
 <div class="card">
-  <h1><a (click)="saveRoute()">Save route</a></h1>
+  <h1>Save route</h1>
+  <div>
+    <input style="width: 100%;" [(ngModel)]="this.routeName">
+  </div>
+  <div>
+    <button (click)="saveRoute()" class="btn btn-primary">Save Route</button>
+  </div>
+  <div *ngIf="this.showMessage">
+    <h3>{{this.saveMessage}}</h3>
+  </div>
+</div>
+<div class="card">
   <p-timeline [value]="stops" align="alternate" styleClass="customized-timeline">
       <ng-template pTemplate="marker" let-loc>
           <span class="custom-marker shadow-2" [style.backgroundColor]="loc.color">
