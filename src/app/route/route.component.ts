@@ -80,29 +80,15 @@ export class RouteComponent {
       return;
     }
 
+    const savedRoute = this.db.list('SavedRoutes');
+    savedRoute.set(this.routeName, {
+      userId: userId,
+      routeName: this.routeName,
+      route: this.allStops
+    });
 
-    //if route exist then return
-    this.db.list<SavedRoutes>('SavedRoutes').valueChanges().subscribe(
-      (result) => {
-        if(result.filter(i => (i.userId === userId && i.routeName === this.routeName)).length > 0){
-          console.log(`found ${this.routeName}`);
-          this.saveMessage = this.routeExistMessage;
-          this.showMessage = true;
-          this.resetMessage();
-          return;
-        }
-        console.log(`not found ${this.routeName}`);
-        var buildingRef = this.db.list('SavedRoutes').push({
-          userId: userId,
-          routeName: this.routeName,
-          route: this.allStops
-        })
-
-        this.saveMessage = this.routeSavedMessage;
-        this.showMessage = true;
-        this.resetMessage();
-      }
-    );
-
+    this.saveMessage = this.routeSavedMessage;
+    this.showMessage = true;
+    this.resetMessage();
   }
 }

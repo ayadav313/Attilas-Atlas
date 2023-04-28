@@ -38,7 +38,8 @@ export class DashboardComponent implements OnInit{
   }
 
   removeRoute(routeToDelete : SavedRoutes){
-    // const savedRouteRef = this.db.list('SavedRoute');
-    // savedRouteRef.remove('');
+    const savedRouteRef = this.db.list('SavedRoutes');
+    savedRouteRef.remove(routeToDelete.routeName);
+    //savedRouteRef.remove();
   }
 }
