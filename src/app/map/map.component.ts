@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
-import { latLng, LatLng, tileLayer } from 'leaflet';
+import { latLng, LatLng, marker, tileLayer, MarkerOptions } from 'leaflet';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -27,6 +27,13 @@ export class MapComponent {
 	zoomLevels = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ];
 	lat = this.center.lat;
 	lng = this.center.lng;
+
+  layers = [
+    marker([ 40.74488695175566, -74.02565024899728 ]
+      , {
+        title:"Stevens Institute of Technology"
+      } )
+  ];
 
 	// Output binding for center
 	onCenterChange(center: LatLng) {
