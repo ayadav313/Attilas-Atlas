@@ -8,7 +8,7 @@ import { Building } from '../models/building';
 })
 export class MapComponent implements OnInit{
 
-  @Input() selectedBuilding !: Building;
+  @Input() selectedBuildings !: Building[];
 
 	optionsSpec: any = {
 		layers: [{ url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', attribution: 'Open Street Map' }],
@@ -41,18 +41,25 @@ export class MapComponent implements OnInit{
   ngOnInit(): void {
     this.layers = this.defaultLayer();
 
-    if(this.selectedBuilding){
-      let lat = this.selectedBuilding.latLng[0];
-      let lang = this.selectedBuilding.latLng[1];
-      this.center = latLng(lat, lang);
-      this.layers =
-      [
-        marker( [lat, lang]
-          , {
-            title: this.selectedBuilding.label
-          } )
-      ]
+    if(this.selectedBuildings){
+      this.layers = [];
+      for (const selectedBuilding of this.selectedBuildings) {
+        if(this.selectedBuildings){
+          let lat = selectedBuilding?.latLng[0] ;
+          let lang = selectedBuilding?.latLng[1] ;
+
+          this.layers.push(
+            marker( [lat, lang]
+              , {
+                title: selectedBuilding.label
+              } ))
+
+        }
+      }
+      this.center = latLng(this.selectedBuildings[0].latLng[0], this.selectedBuildings[0].latLng[1]);
     }
+
+
   }
 
   defaultLayer(){

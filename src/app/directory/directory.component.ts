@@ -33,7 +33,6 @@ export class DirectoryComponent implements OnInit{
 
   nodeSelect(event : any){
     console.log(event.node);
-    this.router.navigate(['/home'], { state: {building : event.node}})
-    //console.log(this.selectedLocation)
+    this.router.navigate(['/home'], { state: {building : [event.node]}})
   }
 }
