@@ -126,67 +126,67 @@
             "label": "1 Ninth Street",
             "icon": "pi pi-building",
             "data": "1 Ninth Street",
-            "latLng": [40.74684151171737, -74.02515882568797]
+            "latLng": [40.746846947897154, -74.02511287434116]
           },
           {
             "label": "2 Ninth Street",
             "icon": "pi pi-building",
             "data": "2 Ninth Street",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.746846947897154, -74.02511287434116]
           },
           {
             "label": "807 Castle Point Terrace",
             "icon": "pi pi-building",
             "data": "807 Castle Point Terrace",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.74644119034575, -74.0257158761849]
           },
           {
             "label": "Gatehouse",
             "icon": "pi pi-building",
             "data": "Gatehouse",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.74320157265956, -74.02607900317618]
           },
           {
             "label": "Griffith Building",
             "icon": "pi pi-building",
             "data": "Griffith Building",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.74287687429006, -74.02538853754196]
           },
           {
             "label": "Hoxie House",
             "icon": "pi pi-building",
             "data": "Hoxie House",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.7465217770909, -74.02370214550635]
           },
           {
             "label": "Ruesterholz Admissions Center",
             "icon": "pi pi-building",
             "data": "Ruesterholz Admissions Center",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.745832279197856, -74.02371388968048]
           },
           {
             "label": "Student Center",
             "icon": "pi pi-building",
             "data": "Student Center",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.74624676398066, -74.024454179399]
           },
           {
             "label": "Student Wellness Center",
             "icon": "pi pi-building",
             "data": "Student Wellness Center",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.74661460503667, -74.02512893201084]
           },
           {
             "label": "Wesley J. Howe Center",
             "icon": "pi pi-building",
             "data": "Wesley J. Howe Center",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.74526330933114, -74.02414130317604]
           },
           {
             "label": "University Center Complex",
             "icon": "pi pi-building",
             "data": "University Center Complex",
-            "latLng": [40.7430798851873, -74.02736427693215]
+            "latLng": [40.745027414562415, -74.02567552690417]
           }
         ]
       },
@@ -200,61 +200,61 @@
         "label": "600 River Terrace",
         "icon": "pi pi-home",
         "data": "600 River Terrace",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.743499357716914, -74.0272914896806]
         },
         {
         "label": "602 River Terrace",
         "icon": "pi pi-home",
         "data": "602 River Terrace",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.743499357716914, -74.0272914896806]
         },
         {
         "label": "604 River Terrace (Gibb House)",
         "icon": "pi pi-home",
         "data": "604 River Terrace (Gibb House)",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.743499357716914, -74.0272914896806]
         },
         {
         "label": "606 River Terrace",
         "icon": "pi pi-home",
         "data": "606 River Terrace",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.743499357716914, -74.0272914896806]
         },
         {
         "label": "Castle Point Hall",
         "icon": "pi pi-home",
         "data": "Castle Point Hall",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.74707940079624, -74.02409427434124]
         },
         {
         "label": "Davis Hall",
         "icon": "pi pi-home",
         "data": "Davis Hall",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.74356517193464, -74.02563787434137]
         },
         {
         "label": "Humphreys Hall",
         "icon": "pi pi-home",
         "data": "Humphreys Hall",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.746187291245775, -74.02510728968053]
         },
         {
         "label": "Jonas Hall",
         "icon": "pi pi-home",
         "data": "Jonas Hall",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.74583786415705, -74.02554421851532]
         },
         {
         "label": "Lore-El Center",
         "icon": "pi pi-home",
         "data": "Lore-El Center",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.746191819514884, -74.02643100317609]
         },
         {
         "label": "Palmer Hall",
         "icon": "pi pi-home",
         "data": "Palmer Hall",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.7455195652462, -74.02516003385448]
         }
         ]
       },
@@ -268,13 +268,13 @@
         "label": "Harries Tower",
         "icon": "pi pi-home",
         "data": "Harries Tower",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.74559131850256, -74.02576089453065]
         },
         {
         "label": "South Tower",
         "icon": "pi pi-home",
         "data": "South Tower",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.744273340993615, -74.0249276896805]
         }
         ]
       },
@@ -288,31 +288,31 @@
         "label": "8th St Lot",
         "icon": "pi pi-car",
         "data": "8th St Lot",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.745558408393094, -74.02635996084558]
         },
         {
         "label": "Babbio Center Garage",
         "icon": "pi pi-car",
         "data": "Babbio Center Garage",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.74273644657661, -74.02657486263055]
         },
         {
         "label": "Castle Point Hall Lot",
         "icon": "pi pi-car",
         "data": "Castle Point Hall Lot",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.74706314449954, -74.02409427434124]
         },
         {
         "label": "Howe Center Lot",
         "icon": "pi pi-car",
         "data": "Howe Center Lot",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.745481565376366, -74.02392663968052]
         },
         {
         "label": "North Lot",
         "icon": "pi pi-car",
         "data": "North Lot",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.74636991683708, -74.02534107693143]
         },
         {
         "label": "River Lot",
@@ -324,7 +324,7 @@
         "label": "Ruesterholz Lots",
         "icon": "pi pi-car",
         "data": "Ruesterholz Lots",
-        "latLng": [40.7430798851873, -74.02736427693215]
+        "latLng": [40.74572054358892, -74.02369242911358]
         }
         ]
       },

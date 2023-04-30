@@ -32,12 +32,7 @@ export class MapComponent implements OnInit{
 	lat = this.center.lat;
 	lng = this.center.lng;
 
-  layers = [
-    marker([ 40.74488695175566, -74.02565024899728 ]
-      , {
-        title:"Stevens Institute of Technology"
-      } )
-  ];
+  layers = this.defaultLayer();
 
   ngOnInit(): void {
     this.layers = this.defaultLayer();
@@ -65,7 +60,7 @@ export class MapComponent implements OnInit{
 
   defaultLayer(){
     return [
-      marker([ 40.74488695175566, -74.02565024899728 ]
+      marker([ 40.745027414562415, -74.02567552690417 ]
         , {
           title:"Stevens Institute of Technology"
         } )
