@@ -21,6 +21,7 @@ export class RouteComponent {
    saveMessage = "";
    savedRoute !: SavedRoutes;
    newRoute = true;
+   mapClassName = "saveRouteMap";
 
   constructor(private router: Router, private nodeService: NodeService, private db: AngularFireDatabase){
 

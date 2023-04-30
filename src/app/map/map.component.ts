@@ -9,6 +9,7 @@ import { Building } from '../models/building';
 export class MapComponent implements OnInit{
 
   @Input() selectedBuildings !: Building[];
+  @Input() className = "homeMap";
 
 	optionsSpec: any = {
 		layers: [{ url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', attribution: 'Open Street Map' }],

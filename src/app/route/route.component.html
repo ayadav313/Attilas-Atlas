@@ -12,7 +12,12 @@
     <h3>{{this.saveMessage}}</h3>
   </div>
 </div>
-<!-- <div class="card">
+
+<div>
+  <app-map [className]="mapClassName"  [selectedBuildings]="this.savedRoute.route"></app-map>
+</div>
+
+<div class="card">
   <p-timeline [value]="stops" align="alternate" styleClass="customized-timeline">
       <ng-template pTemplate="marker" let-loc>
           <span class="custom-marker shadow-2" [style.backgroundColor]="loc.color">
@@ -27,7 +32,4 @@
           </p-card>
       </ng-template>
   </p-timeline>
-</div> -->
-<div>
-  <app-map [selectedBuildings]="this.savedRoute.route"></app-map>
 </div>
