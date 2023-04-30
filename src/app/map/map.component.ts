@@ -1,15 +1,18 @@
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { latLng, LatLng, marker, tileLayer, MarkerOptions } from 'leaflet';
+import { Building } from '../models/building';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent {
+export class MapComponent implements OnInit{
+
+  @Input() selectedBuilding !: Building;
 
 	optionsSpec: any = {
 		layers: [{ url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', attribution: 'Open Street Map' }],
-		zoom: 16.5,
+		zoom: 40,
 		center: [ 40.7439905, -74.0274740 ]
 	};
 
@@ -34,6 +37,32 @@ export class MapComponent {
         title:"Stevens Institute of Technology"
       } )
   ];
+
+  ngOnInit(): void {
+    this.layers = this.defaultLayer();
+
+    if(this.selectedBuilding){
+      let lat = this.selectedBuilding.latLng[0];
+      let lang = this.selectedBuilding.latLng[1];
+      this.center = latLng(lat, lang);
+      this.layers =
+      [
+        marker( [lat, lang]
+          , {
+            title: this.selectedBuilding.label
+          } )
+      ]
+    }
+  }
+
+  defaultLayer(){
+    return [
+      marker([ 40.74488695175566, -74.02565024899728 ]
+        , {
+          title:"Stevens Institute of Technology"
+        } )
+    ];
+  }
 
 	// Output binding for center
 	onCenterChange(center: LatLng) {
