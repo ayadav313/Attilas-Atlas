@@ -56,7 +56,8 @@ export class NodeService {
                 for (let child of building.children) {
                   let bldg = {
                     label: child.label,
-                    data: child.data
+                    data: child.data,
+                    latLng:child.latLng
                   }
                   buildings.push(bldg);
                 }
