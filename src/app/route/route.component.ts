@@ -1,8 +1,10 @@
+import { SavedRoutes } from './../models/saved-routes';
 import { NodeService } from './../nodeservice';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PrimeIcons } from 'primeng/api';
 import { Building } from '../models/building';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-route',
@@ -12,14 +14,31 @@ import { Building } from '../models/building';
 export class RouteComponent {
    stops!: any[];
    allStops !: string[];
+   routeName = "";
+   showMessage = false;
+   routeSavedMessage = "Your route was saved";
+   routeExistMessage = "Route exists, please change the route name to save."
+   saveMessage = "";
+   savedRoute !: SavedRoutes;
+   newRoute = true;
 
-  constructor(private router: Router, private nodeService: NodeService){
+  constructor(private router: Router, private nodeService: NodeService, private db: AngularFireDatabase){
 
   }
 
   ngOnInit() {
 
-    this.allStops = history.state.stops as string[];
+    this.savedRoute = history.state.selectedRoute as SavedRoutes;
+    //console.log(this.savedRoute);
+    this.allStops = this.savedRoute.route;
+    //console.log(this.allStops);
+
+    this.newRoute = true;
+    this.routeName = this.allStops.join(' - ');
+    if(this.savedRoute.routeName){
+      this.newRoute = false;
+      this.routeName = this.savedRoute.routeName;
+    }
 
     const buildingsObserver = {
       next: (data: Building[]) => {
@@ -43,7 +62,33 @@ export class RouteComponent {
     this.nodeService.getBuildings().subscribe(buildingsObserver);
   }
 
-  saveRoute(){
+  resetMessage(){
 
+    setTimeout(() => {
+      this.showMessage = false;
+      this.saveMessage = "";
+     }, 2000)
+  }
+
+  saveRoute(){
+    this.resetMessage();
+    const userId = localStorage.getItem("userId");
+    if(!userId){
+      this.saveMessage = "You have to login to save route"
+      this.showMessage = true;
+      this.resetMessage();
+      return;
+    }
+
+    const savedRoute = this.db.list('SavedRoutes');
+    savedRoute.set(this.routeName, {
+      userId: userId,
+      routeName: this.routeName,
+      route: this.allStops
+    });
+
+    this.saveMessage = this.routeSavedMessage;
+    this.showMessage = true;
+    this.resetMessage();
   }
 }

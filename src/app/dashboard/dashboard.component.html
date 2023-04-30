@@ -1,1 +1,17 @@
-<p>dashboard works!</p>
+<div class="container">
+  <h1>Your Saved Routes</h1>
+
+  <div *ngFor="let savedRoute of savedRoutes$ | async">
+    <!-- {{ savedRoute.routeName }} -->
+    <div class="row">
+      <div class="col-5">{{ savedRoute.routeName }}</div>
+      <div class="col-3">
+        <p-button label="Show Route" icon="pi pi-view" iconPos="right" (click)="showRoute(savedRoute)"></p-button>
+        <p-button label="Remove" icon="pi pi-minus" iconPos="right" (click)="removeRoute(savedRoute)"></p-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <p-tree [value]="routesTree" [filter]="true"></p-tree> -->
+</div>
+

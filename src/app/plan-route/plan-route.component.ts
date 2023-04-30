@@ -1,6 +1,8 @@
+import { SavedRoutes } from './../models/saved-routes';
 import { Component, OnInit } from '@angular/core';
 import { NodeService } from '../nodeservice';
 import { Router } from '@angular/router';
+import { Building } from '../models/building';
 
 @Component({
   selector: 'app-plan-route',
@@ -49,6 +51,17 @@ export class PlanRouteComponent implements OnInit{
   addRoute(){
     let allStops = [];
     allStops = [this.start, ...this.stops, this.end];
-    this.router.navigate(['/routetest'], { state: {stops : allStops}})
+
+
+    // for (const stop in allStops) {
+    //   let building = {
+    //     label: stop,
+    //     data: stop
+    //   }
+    //   buildings.push(building);
+    // }
+
+    let selectedRoute = { userId: "", routeName:"", route : allStops };
+    this.router.navigate(['/show-route'], { state: {selectedRoute : selectedRoute}})
   }
 }
