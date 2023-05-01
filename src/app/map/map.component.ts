@@ -8,7 +8,8 @@ import { Building } from '../models/building';
 })
 export class MapComponent implements OnInit{
 
-  @Input() selectedBuilding !: Building;
+  @Input() selectedBuildings !: Building[];
+  @Input() className = "homeMap";
 
 	optionsSpec: any = {
 		layers: [{ url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', attribution: 'Open Street Map' }],
@@ -31,33 +32,35 @@ export class MapComponent implements OnInit{
 	lat = this.center.lat;
 	lng = this.center.lng;
 
-  layers = [
-    marker([ 40.74488695175566, -74.02565024899728 ]
-      , {
-        title:"Stevens Institute of Technology"
-      } )
-  ];
+  layers = this.defaultLayer();
 
   ngOnInit(): void {
     this.layers = this.defaultLayer();
 
-    if(this.selectedBuilding){
-      let lat = this.selectedBuilding.latLng[0];
-      let lang = this.selectedBuilding.latLng[1];
-      this.center = latLng(lat, lang);
-      this.layers =
-      [
-        marker( [lat, lang]
-          , {
-            title: this.selectedBuilding.label
-          } )
-      ]
+    if(this.selectedBuildings){
+      this.layers = [];
+      for (const selectedBuilding of this.selectedBuildings) {
+        if(this.selectedBuildings){
+          let lat = selectedBuilding?.latLng[0] ;
+          let lang = selectedBuilding?.latLng[1] ;
+
+          this.layers.push(
+            marker( [lat, lang]
+              , {
+                title: selectedBuilding.label
+              } ))
+
+        }
+      }
+      this.center = latLng(this.selectedBuildings[0].latLng[0], this.selectedBuildings[0].latLng[1]);
     }
+
+
   }
 
   defaultLayer(){
     return [
-      marker([ 40.74488695175566, -74.02565024899728 ]
+      marker([ 40.745027414562415, -74.02567552690417 ]
         , {
           title:"Stevens Institute of Technology"
         } )

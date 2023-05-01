@@ -1,3 +1,4 @@
+import { latLng } from 'leaflet';
 import { SavedRoutes } from './../models/saved-routes';
 import { Component, OnInit } from '@angular/core';
 import { NodeService } from '../nodeservice';
@@ -15,6 +16,7 @@ export class PlanRouteComponent implements OnInit{
   end!: string;
   results!: string[];
   stops: string[] = [];
+  allBuildings : Building[] = [];
 
 
   constructor(private nodeService: NodeService, private router: Router){
@@ -22,6 +24,11 @@ export class PlanRouteComponent implements OnInit{
 
   ngOnInit(): void {
     this.search("");
+    this.nodeService.getBuildings().subscribe(
+      (results) => {
+        this.allBuildings = results;
+      }
+    )
   }
 
   search(event: any) {
@@ -51,17 +58,14 @@ export class PlanRouteComponent implements OnInit{
   addRoute(){
     let allStops = [];
     allStops = [this.start, ...this.stops, this.end];
+    let buildings : Building[] = [];
 
+    for (const stop of allStops) {
+      let bldg = this.allBuildings.find(i => i.label === stop) as Building;
+      buildings.push(bldg);
+    }
 
-    // for (const stop in allStops) {
-    //   let building = {
-    //     label: stop,
-    //     data: stop
-    //   }
-    //   buildings.push(building);
-    // }
-
-    let selectedRoute = { userId: "", routeName:"", route : allStops };
+    let selectedRoute = { userId: "", routeName:"", route : buildings };
     this.router.navigate(['/show-route'], { state: {selectedRoute : selectedRoute}})
   }
 }

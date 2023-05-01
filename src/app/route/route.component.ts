@@ -21,6 +21,7 @@ export class RouteComponent {
    saveMessage = "";
    savedRoute !: SavedRoutes;
    newRoute = true;
+   mapClassName = "saveRouteMap";
 
   constructor(private router: Router, private nodeService: NodeService, private db: AngularFireDatabase){
 
@@ -29,9 +30,9 @@ export class RouteComponent {
   ngOnInit() {
 
     this.savedRoute = history.state.selectedRoute as SavedRoutes;
-    //console.log(this.savedRoute);
-    this.allStops = this.savedRoute.route;
-    //console.log(this.allStops);
+    console.log(this.savedRoute);
+    this.allStops = this.savedRoute.route.map(i => i.label);
+    console.log(this.allStops);
 
     this.newRoute = true;
     this.routeName = this.allStops.join(' - ');
@@ -81,10 +82,10 @@ export class RouteComponent {
     }
 
     const savedRoute = this.db.list('SavedRoutes');
-    savedRoute.set(this.routeName, {
+    savedRoute.set(`${userId}-${this.routeName}` , {
       userId: userId,
       routeName: this.routeName,
-      route: this.allStops
+      route: this.savedRoute.route
     });
 
     this.saveMessage = this.routeSavedMessage;

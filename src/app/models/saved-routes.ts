@@ -4,5 +4,5 @@ export interface SavedRoutes
 {
   userId: string,
   routeName: string,
-  route: string[]
+  route: Building[]
 }

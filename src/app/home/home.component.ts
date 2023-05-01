@@ -8,11 +8,12 @@ import { Building } from '../models/building';
 })
 export class HomeComponent implements OnInit{
 
-  selectedBuilding !: Building;
+  selectedBuildings !: Building[];
+  mapClassName = "homeMap";
 
   ngOnInit(): void {
-    this.selectedBuilding = history.state.building as Building;
-    console.log(`selected building ${JSON.stringify(this.selectedBuilding)}`);
+    this.selectedBuildings = history.state.building as Building[];
+    //console.log(`selected building ${JSON.stringify(this.selectedBuilding)}`);
 
   }
 
