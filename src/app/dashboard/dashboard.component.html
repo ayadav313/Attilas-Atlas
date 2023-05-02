@@ -3,8 +3,8 @@
 
   <div *ngFor="let savedRoute of savedRoutes$ | async">
     <!-- {{ savedRoute.routeName }} -->
-    <div class="row">
-      <div class="col-5">{{ savedRoute.routeName }}</div>
+    <div class="row mx-3 my-5">
+      <div class="col-5"><h3>{{ savedRoute.routeName }}</h3></div>
       <div class="col-3">
         <p-button label="Show Route" icon="pi pi-view" iconPos="right" (click)="showRoute(savedRoute)"></p-button>
         <p-button label="Remove" icon="pi pi-minus" iconPos="right" (click)="removeRoute(savedRoute)"></p-button>

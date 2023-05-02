@@ -15,7 +15,7 @@ export class MapComponent implements OnInit{
   @Input() className = "homeMap";
 
 	optionsSpec: any = {
-		layers: [{ url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', attribution: 'Open Street Map' }],
+		layers: [{ url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', attribution: 'Open Street Map' }],
 		zoom: 40,
 		center: [ 40.7439905, -74.0274740 ]
 	};
@@ -51,7 +51,7 @@ export class MapComponent implements OnInit{
             marker( [lat, lang]
               , {
                 title: selectedBuilding.label,
-				icon: L.icon({ iconUrl: '/marker-icon.png' })
+				icon: L.icon({ iconUrl: '/assets/marker-icon.png' })
               } ))
 
         }
@@ -67,7 +67,7 @@ export class MapComponent implements OnInit{
       marker([ 40.745027414562415, -74.02567552690417 ]
         , {
           title:"Stevens Institute of Technology",
-		  icon: L.icon({ iconUrl: '/marker-icon.png' })
+		  icon: L.icon({ iconUrl: '/assets/marker-icon.png' })
         } )
     ];
   }
