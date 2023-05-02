@@ -1,6 +1,9 @@
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { latLng, LatLng, marker, tileLayer, MarkerOptions } from 'leaflet';
 import { Building } from '../models/building';
+import * as L from 'leaflet'; // import the L object from the leaflet library
+
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -8,7 +11,7 @@ import { Building } from '../models/building';
 })
 export class MapComponent implements OnInit{
 
-  @Input() selectedBuildings !: Building[];
+  @Input() selectedBuildings !: Building[]; 
   @Input() className = "homeMap";
 
 	optionsSpec: any = {
@@ -47,7 +50,8 @@ export class MapComponent implements OnInit{
           this.layers.push(
             marker( [lat, lang]
               , {
-                title: selectedBuilding.label
+                title: selectedBuilding.label,
+				icon: L.icon({ iconUrl: '/marker-icon.png' })
               } ))
 
         }
@@ -62,7 +66,8 @@ export class MapComponent implements OnInit{
     return [
       marker([ 40.745027414562415, -74.02567552690417 ]
         , {
-          title:"Stevens Institute of Technology"
+          title:"Stevens Institute of Technology",
+		  icon: L.icon({ iconUrl: '/marker-icon.png' })
         } )
     ];
   }

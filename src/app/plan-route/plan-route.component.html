@@ -2,7 +2,13 @@
   <h1 class="form-title">Campus Route Planner</h1>
   <form>
 
-
+    <div class="form-group" >
+      <label for="transportation"><i class="fas fa-walking"></i> Mode of Transportation:</label>
+      <select class="form-control" id="transportation">
+        <option>Walk</option>
+        <option>Bike</option>
+      </select>
+    </div>
 
     <div class="form-group">
       <label for="start"><i class="fas fa-map-marker-alt"></i> Start:</label>
@@ -16,7 +22,7 @@
         <label for="stop{{i}}"><i class="fas fa-map-marker-alt"></i> Stop #{{i + 1}}:</label>
         <div class="input-group">
           <p-autoComplete [(ngModel)]="stops[i]" [ngModelOptions]="{standalone: true}" [suggestions]="results" (completeMethod)="search($event)" [dropdown]="true"></p-autoComplete>
-          <div class="input-group-append">
+          <div class="input-group-append mx-5">
             <p-button label="Remove" icon="pi pi-minus" iconPos="right" (click)="removeStop(i)"></p-button>
           </div>
         </div>
@@ -34,14 +40,9 @@
       <p-button label="Add Stop" icon="pi pi-plus" iconPos="right" (click)="addStop()"></p-button>
     </div>
 
-    <div class="form-group col-8 col-sm-5 col-md-4" >
-      <label for="transportation"><i class="fas fa-walking"></i> Mode of Transportation:</label>
-      <select class="form-control" id="transportation">
-        <option>Walking</option>
-      </select>
-    </div>
 
-    <div class="form-group text-left">
+
+    <div class="form-group">
       <!-- <button type="submit" class="btn btn-primary" routerLink="/show-route">Add Route</button> -->
       <button type="submit" class="btn btn-primary" (click)="addRoute()">Show Route</button>
     </div>

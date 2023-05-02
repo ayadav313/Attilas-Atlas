@@ -1,35 +1,24 @@
-<div class="card">
-  <h3>Save route</h3>
-  <!-- <div class="row"> -->
-    <div>
-      <input style="width: 100%;" [(ngModel)]="this.routeName">
-    </div>
-    <div>
-      <button (click)="saveRoute()" class="btn btn-primary">Save Route</button>
-    </div>
-  <!-- </div> -->
-  <div *ngIf="this.showMessage">
-    <h3>{{this.saveMessage}}</h3>
+<div class="mx-10">
+  <h1> {{this.routeName}}</h1>
+
+  <div>
+    <app-map [className]="mapClassName"  [selectedBuildings]="this.savedRoute.route"></app-map>
   </div>
-</div>
 
-<div>
-  <app-map [className]="mapClassName"  [selectedBuildings]="this.savedRoute.route"></app-map>
-</div>
+  <div class="card">
+    <div *ngIf="this.showMessage">
+      <h3>{{this.saveMessage}}</h3>
+    </div>
+    <!-- <div class="row"> -->
+      <!-- <div>
+        <input style="width: 100%;" [(ngModel)]="this.routeName">
+        </div> -->
+        <div>
+        <button style="width: 100%;" (click)="saveRoute()" class="btn btn-primary">Save Route</button>
+      </div>
+    <!-- </div> -->
+    
+  </div>
+  
 
-<div class="card">
-  <p-timeline [value]="stops" align="alternate" styleClass="customized-timeline">
-      <ng-template pTemplate="marker" let-loc>
-          <span class="custom-marker shadow-2" [style.backgroundColor]="loc.color">
-              <i [ngClass]="loc.icon"></i>
-          </span>
-      </ng-template>
-      <ng-template pTemplate="content" let-loc>
-          <p-card [header]="loc.name" [subheader]="loc.address">
-              <img *ngIf="loc.image" [src]="loc.image" [alt]="loc.name" width="200" class="shadow-2" />
-              <p>{{loc.name}}</p>
-              <button pButton label="Read more" class="p-button-text"></button>
-          </p-card>
-      </ng-template>
-  </p-timeline>
 </div>
