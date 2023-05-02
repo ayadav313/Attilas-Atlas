@@ -16,8 +16,8 @@ export class MapComponent implements OnInit{
 
 	optionsSpec: any = {
 		layers: [{ url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', attribution: 'Open Street Map' }],
-		zoom: 40,
-		center: [ 40.7439905, -74.0274740 ]
+		zoom: 17,
+		center: [ 40.7449905, -74.0244740 ]
 	};
 
 	// Leaflet bindings
