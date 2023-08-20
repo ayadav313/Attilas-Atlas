@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
+[![DEMO](https://img.youtube.com/vi/Lpy0sKsJ9jA/0.jpg)](https://www.youtube.com/watch?v=Lpy0sKsJ9jA)
+
 ## Install dependencies
 Run `npm i`
 
